@@ -5972,6 +5972,11 @@ static uint32_t DdiMedia_GetChromaPitchHeight(PDDI_MEDIA_SURFACE mediaSurface, u
             *chromaHeight = mediaSurface->iHeight/2;
             *chromaPitch = mediaSurface->iPitch / 2;
             return 2;
+        case VA_FOURCC_444P:
+            *chromaWidth = mediaSurface->iWidth;
+            *chromaHeight = mediaSurface->iHeight;
+            *chromaPitch = mediaSurface->iPitch;
+            return 3;
         case VA_FOURCC_YUY2:
         case VA_FOURCC_Y800:
         case VA_FOURCC_UYVY:
